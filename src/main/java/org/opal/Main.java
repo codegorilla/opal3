@@ -21,10 +21,10 @@ public class Main {
       System.out.println("error: input file not found");
       System.exit(1);
     }
-//    OpalLexer lexer = new OpalLexer(input);
-//    CommonTokenStream tokens = new CommonTokenStream(lexer);
-//    OpalParser parser = new OpalParser(tokens);
-//    ParseTree tree = parser.translationUnit();
-//    System.out.println(tree.toStringTree(parser));
+    OpalLexer lexer = new OpalLexer(input);
+    CommonTokenStream tokens = new CommonTokenStream(lexer);
+    OpalParser parser = new OpalParser(tokens);
+    ParseTree tree = parser.translationUnit();
+    System.out.println(tree.toStringTree(parser));
   }
 }
