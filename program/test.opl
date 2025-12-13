@@ -1,0 +1,11 @@
+package main;
+
+import opal.lang.math;
+import opal.lang.math as m;
+
+use opal.lang.cos;
+use opal.lang.{ Bessel, Jacobian };
+use opal.lang.*;
+
+var x: **int[1] = 1;
+
