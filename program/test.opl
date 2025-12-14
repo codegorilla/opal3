@@ -7,5 +7,5 @@ use opal.lang.cos;
 use opal.lang.{ Bessel, Jacobian };
 use opal.lang.*;
 
-var x: int = 1;
+var x: **int[1] = 2;
 

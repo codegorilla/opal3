@@ -69,7 +69,38 @@ NEWLINE: [\r\n]+ -> skip;
 
 WHITESPACE: [ \t] -> skip;
 
-IDENTIFIER: [A-Za-z][A-Za-z0-9]*;
+IDENTIFIER: LETTER (LETTER | DIGIT | '_')*;
 
-INT_LITERAL: [0-9]+;
+INT32_LITERAL: DIGIT+;
 
+INT64_LITERAL: DIGIT+ LONG_SUFFIX;
+
+UINT32_LITERAL: DIGIT+ UNSIGNED_SUFFIX;
+
+UINT64_LITERAL: DIGIT+ ((UNSIGNED_SUFFIX LONG_SUFFIX) | (LONG_SUFFIX UNSIGNED_SUFFIX)) ;
+
+FLOAT32_LITERAL
+  : '.' DIGIT+ ('e' | 'E' DIGIT+)? FLOAT_SUFFIX?
+  | DIGIT '.' DIGIT+ ('e' | 'E' DIGIT+)? FLOAT_SUFFIX?
+  ;
+
+FLOAT64_LITERAL
+  : '.' DIGIT+ ('e' | 'E' DIGIT+)? DOUBLE_SUFFIX?
+  | DIGIT '.' DIGIT+ ('e' | 'E' DIGIT+)? DOUBLE_SUFFIX?
+  ;
+
+fragment LONG_SUFFIX: 'l' | 'L';
+
+fragment UNSIGNED_SUFFIX: 'u' | 'U';
+
+fragment FLOAT_SUFFIX: 'f' | 'F';
+
+fragment DOUBLE_SUFFIX: 'd' | 'D';
+
+fragment DIGIT: [0-9];
+
+fragment UPPER_LETTER: [A-Z];
+
+fragment LOWER_LETTER: [a-z];
+
+fragment LETTER: UPPER_LETTER | LOWER_LETTER;

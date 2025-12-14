@@ -197,6 +197,7 @@ parenthesizedExpression
 
 literal
   : booleanLiteral
+  | floatingPointLiteral
   | integerLiteral
   ;
 
@@ -205,8 +206,12 @@ booleanLiteral
   | FALSE
   ;
 
+floatingPointLiteral
+  : FLOAT32_LITERAL
+  ;
+
 integerLiteral
-  : INT_LITERAL
+  : INT32_LITERAL
   ;
 
 // TYPES
