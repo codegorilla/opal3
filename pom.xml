@@ -29,7 +29,6 @@
 
     <build>
         <plugins>
-
             <plugin>
                 <groupId>org.antlr</groupId>
                 <artifactId>antlr4-maven-plugin</artifactId>
@@ -42,6 +41,17 @@
                         </goals>
                     </execution>
                 </executions>
+            </plugin>
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>exec-maven-plugin</artifactId>
+                <version>3.6.3</version>
+                <configuration>
+                    <mainClass>org.opal.Main</mainClass>
+                    <arguments>
+                        <argument>program/test.opl</argument>
+                    </arguments>
+                </configuration>
             </plugin>
         </plugins>
     </build>
